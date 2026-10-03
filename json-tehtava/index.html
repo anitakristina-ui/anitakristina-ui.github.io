@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-tehtävät - Anitan sivut</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand navbar-text d-flex align-items-center gap-2" href="index.html">
+                <span class="fs-4 fw-bold">JSON-tehtävät</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobiiliValikko">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mobiiliValikko">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Tehtävä 1</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container my-5">
+        <h1>JSON-tehtävä</h1>
+        <!-- Muutettu ID muotoon "vastaus" ohjeen mukaan -->
+        <div id="vastaus">
+            Ladataan tietoja...
+        </div>
+    </main>
+
+    <script>
+        // Ohjeen mukainen fetch-haku:
+        fetch('tietue.JSON')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (responseJson) {
+                kerro(responseJson); // Kutsutaan kerro-funktiota
+            })
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            });
+
+        // Luodaan kerro-funktio, joka tulostaa datan
+        function kerro(obj) {
+            var tiedot = "<p>";
+
+            for (var i = 0; i < obj.tekniikat.length; i++) {
+                tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
+                tiedot += " <a href='" + obj.tekniikat[i].linkki + "'>" + obj.tekniikat[i].linkki + "</a><br>";
+            }
+
+            tiedot += "</p>";
+
+            document.getElementById("vastaus").innerHTML = tiedot;
+        }
+    </script>
+</body>
+
+</html>
