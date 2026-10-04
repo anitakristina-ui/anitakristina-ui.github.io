@@ -44,7 +44,7 @@
     </main>
 
     <script>
-        <!-- Haetaan toteutus.JSON -->
+        //Haetaan toteutus.JSON
         fetch('toteutus.JSON')
             .then(function (response) {
                 return response.json();
@@ -56,7 +56,7 @@
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        <!-- Funktio datan esittämiseen -->
+        //Funktio datan esittämiseen
         function naytaToteutus(data) {
             var tiedot = "";
 

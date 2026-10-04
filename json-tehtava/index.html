@@ -43,7 +43,7 @@
     </main>
 
     <script>
-        <!-- Tässä tein ohjeen mukaan fetch-haun tietue.JSONiin -->
+        //Tässä tein ohjeen mukaan fetch-haun tietue.JSONiin
         fetch('tietue.JSON')
             .then(function (response) {
                 return response.json();
@@ -55,7 +55,7 @@
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        <!-- Kerro-funktio, joka tulostaa datan -->
+        //Kerro-funktio, joka tulostaa datan
         function kerro(obj) {
             var tiedot = "<p>";
 
