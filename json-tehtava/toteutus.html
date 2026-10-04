@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toteutuksen tiedot - Digitekniikat</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigaatiopalkki -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">JSON Tehtävät</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Tekniikat</a>
+                <a class="nav-link active" href="toteutus.html">Toteutus</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pääsisältö -->
+    <main class="container my-5">
+        <div id="vastaus">
+            <p>Ladataan toteutuksen tietoja...</p>
+        </div>
+    </main>
+
+    <script>
+        // Haetaan toteutus.json
+        fetch('toteutus.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (responseJson) {
+                naytaToteutus(responseJson);
+            })
+            .catch(function (error) {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            });
+
+        // Funktio datan esittämiseen
+        function naytaToteutus(data) {
+            var tiedot = "";
+
+            // Otsikko ja perustiedot
+            tiedot += "<h1>" + data.nimi + "</h1>";
+            tiedot += "<p><b>Ajankohta:</b> " + data.alkamisaika + " – " + data.loppumisaika + " (" + data.kesto_viikkoina + " viikkoa)</p>";
+            tiedot += "<p><b>Osallistujien lukumäärä:</b> " + data.osallistujat_maara + " kpl</p>";
+
+            // Osallistujalistasilmukka (for-silmukka)
+            tiedot += "<h3>Osallistujat:</h3>";
+            tiedot += "<ul>";
+            for (var i = 0; i < data.osallistujat.length; i++) {
+                tiedot += "<li>" + data.osallistujat[i] + "</li>";
+            }
+            tiedot += "</ul>";
+
+            // Kuva
+            tiedot += "<div class='mt-4'>";
+            tiedot += "<img src='" + data.kuva + "' alt='Toteutuksen kuva' class='img-fluid rounded style='max-width: 500px;'>";
+            tiedot += "</div>";
+
+            // Kirjoitetaan valmis HTML sivulle
+            document.getElementById("vastaus").innerHTML = tiedot;
+        }
+    </script>
+</body>
+
+</html>
