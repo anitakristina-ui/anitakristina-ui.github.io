@@ -13,12 +13,26 @@
 <body>
 
     <!-- Navigaatiopalkki -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">JSON Tehtävät</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="index.html">Tekniikat</a>
-                <a class="nav-link active" href="toteutus.html">Toteutus</a>
+    <nav class="navbar navbar-expand-sm custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand navbar-text d-flex align-items-center gap-2" href="index.html">
+                <span class="fs-4 fw-bold">JSON-tehtävät</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobiiliValikko">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mobiiliValikko">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Tekniikat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="toteutus.html">Toteutus</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -62,7 +76,7 @@
 
             // Kuva
             tiedot += "<div class='mt-4'>";
-            tiedot += "<img src='" + data.kuva + "' alt='Toteutuksen kuva' class='img-fluid rounded style='max-width: 500px;'>";
+            tiedot += "<img src='" + data.kuva + "' alt='Toteutuksen kuva' class='img-fluid rounded' style='max-width: 500px;'>";
             tiedot += "</div>";
 
             // Kirjoitetaan valmis HTML sivulle

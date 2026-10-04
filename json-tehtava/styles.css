@@ -1,7 +1,7 @@
 /* 1. Koko sivun tyylit */
 body {
     background-color: #f8f9fa;
-    color: #faadeb;
+    color: #9f0681;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -27,9 +27,18 @@ body {
 }
 
 /* 3. JSON-näytön tyylit */
-#json-sisalto {
+#vastaus {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#vastaus a {
+    color: #e969eb;
+    text-decoration: none;
+}
+
+#vastaus a:hover {
+    text-decoration: underline;
 }
