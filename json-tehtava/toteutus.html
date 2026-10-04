@@ -44,7 +44,7 @@
     </main>
 
     <script>
-        //Haetaan toteutus (JSON)
+        // Haetaan toteutus.json
         fetch('toteutus.JSON')
             .then(function (response) {
                 return response.json();
@@ -56,17 +56,16 @@
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        //Funktio datan esittämiseen
+        // Funktio datan esittämiseen
         function naytaToteutus(data) {
             var tiedot = "";
 
-            //Otsikko ja tiedot 
+            // Otsikko ja tiedot 
             tiedot += "<h1>" + data.nimi + "</h1>";
-            tiedot += "<p><b>Ajankohta:</b> " + data.alkamisaika + " – " + data.loppumisaika + " (" + data.kesto_viikkoina + "
-        viikkoa)</p > ";
+            tiedot += "<p><b>Ajankohta:</b> " + data.alkamisaika + " – " + data.loppumisaika + " (" + data.kesto_viikkoina + " viikkoa)</p>";
             tiedot += "<p><b>Osallistujien lukumäärä:</b> " + data.osallistujat_maara + " kpl</p>";
 
-            // For-silmukka
+            // For-silmukka osallistujille
             tiedot += "<h3>Osallistujat:</h3>";
             tiedot += "<ul>";
             for (var i = 0; i < data.osallistujat.length; i++) {
@@ -80,7 +79,8 @@
             tiedot += "</div>";
 
             document.getElementById("vastaus").innerHTML = tiedot;
-        } </script>
+        }
+    </script>
 </body>
 
 </html>
