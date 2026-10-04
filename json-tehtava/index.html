@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    // Tähän tein navigaation, ja samanlainen löytyy toteutus.html-sivulta
     <nav class="navbar navbar-expand-sm custom">
         <div class="container-fluid">
 
@@ -36,26 +37,25 @@
     </nav>
     <main class="container my-5">
         <h1>JSON-tehtävä</h1>
-        <!-- Muutettu ID muotoon "vastaus" ohjeen mukaan -->
         <div id="vastaus">
             Ladataan tietoja...
         </div>
     </main>
 
     <script>
-        // Ohjeen mukainen fetch-haku:
+        //Tässä tein ohjeen mukaan fetch-haun tietue.JSONiin
         fetch('tietue.JSON')
             .then(function (response) {
                 return response.json();
             })
             .then(function (responseJson) {
-                kerro(responseJson); // Kutsutaan kerro-funktiota
+                kerro(responseJson);
             })
             .catch(function (error) {
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        // Luodaan kerro-funktio, joka tulostaa datan
+        //Kerro-funktio, joka tulostaa datan
         function kerro(obj) {
             var tiedot = "<p>";
 

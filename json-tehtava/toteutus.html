@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- Navigaatiopalkki -->
+    //Sama navigaatio, joka löytyy index.html-sivulta
     <nav class="navbar navbar-expand-sm custom">
         <div class="container-fluid">
 
@@ -37,7 +37,6 @@
         </div>
     </nav>
 
-    <!-- Pääsisältö -->
     <main class="container my-5">
         <div id="vastaus">
             <p>Ladataan toteutuksen tietoja...</p>
@@ -45,7 +44,7 @@
     </main>
 
     <script>
-        // Haetaan toteutus.json
+        //Haetaan toteutus.JSON
         fetch('toteutus.JSON')
             .then(function (response) {
                 return response.json();
@@ -57,16 +56,16 @@
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        // Funktio datan esittämiseen
+        //Funktio datan esittämiseen
         function naytaToteutus(data) {
             var tiedot = "";
 
-            // Otsikko ja perustiedot
+            // Otsikko ja tiedot
             tiedot += "<h1>" + data.nimi + "</h1>";
             tiedot += "<p><b>Ajankohta:</b> " + data.alkamisaika + " – " + data.loppumisaika + " (" + data.kesto_viikkoina + " viikkoa)</p>";
             tiedot += "<p><b>Osallistujien lukumäärä:</b> " + data.osallistujat_maara + " kpl</p>";
 
-            // Osallistujalistasilmukka (for-silmukka)
+            // For-silmukka
             tiedot += "<h3>Osallistujat:</h3>";
             tiedot += "<ul>";
             for (var i = 0; i < data.osallistujat.length; i++) {
@@ -74,12 +73,11 @@
             }
             tiedot += "</ul>";
 
-            // Kuva
+            //Kuva
             tiedot += "<div class='mt-4'>";
             tiedot += "<img src='" + data.kuva + "' alt='Toteutuksen kuva' class='img-fluid rounded' style='max-width: 500px;'>";
             tiedot += "</div>";
 
-            // Kirjoitetaan valmis HTML sivulle
             document.getElementById("vastaus").innerHTML = tiedot;
         }
     </script>
