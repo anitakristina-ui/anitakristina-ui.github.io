@@ -44,7 +44,7 @@
     </main>
 
     <script>
-        //Haetaan toteutus.JSON
+        //Haetaan toteutus (JSON)
         fetch('toteutus.JSON')
             .then(function (response) {
                 return response.json();
@@ -60,18 +60,25 @@
         function naytaToteutus(data) {
             var tiedot = "";
 
-            <!-- Otsikko ja tiedot -->
+            //Otsikko ja tiedot 
             tiedot += "<h1>" + data.nimi + "</h1>";
             tiedot += "<p><b>Ajankohta:</b> " + data.alkamisaika + " – " + data.loppumisaika + " (" + data.kesto_viikkoina + "
         viikkoa)</p > ";
             tiedot += "<p><b>Osallistujien lukumäärä:</b> " + data.osallistujat_maara + " kpl</p>";
 
-            <!-- For-silmukka -->
+            // For-silmukka
             tiedot += "<h3>Osallistujat:</h3>";
             tiedot += "<ul>";
-            for (var i = 0; i < data.osallistujat.length; i++) { tiedot += "<li>" + data.osallistujat[i] + "</li>"; } tiedot
-                += "</ul>"; //Kuva tiedot +="<div class='mt-4'>" ; tiedot +="<img src='" + data.kuva
-            + "' alt='Toteutuksen kuva' class='img-fluid rounded' style='max-width: 500px;'>"; tiedot += "</div>";
+            for (var i = 0; i < data.osallistujat.length; i++) {
+                tiedot += "<li>" + data.osallistujat[i] + "</li>";
+            }
+            tiedot += "</ul>";
+
+            // Kuvan lisäys
+            tiedot += "<div class='mt-4'>";
+            tiedot += "<img src='" + data.kuva + "' alt='Toteutuksen kuva' class='img-fluid rounded' style='max-width: 500px;'>";
+            tiedot += "</div>";
+
             document.getElementById("vastaus").innerHTML = tiedot;
         } </script>
 </body>
