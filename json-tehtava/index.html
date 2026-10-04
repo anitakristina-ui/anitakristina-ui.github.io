@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    // Tähän tein navigaation, ja samanlainen löytyy toteutus.html-sivulta
+    <!-- Tähän tein navigaation, ja samanlainen löytyy toteutus.html-sivulta -->
     <nav class="navbar navbar-expand-sm custom">
         <div class="container-fluid">
 
@@ -43,7 +43,7 @@
     </main>
 
     <script>
-        //Tässä tein ohjeen mukaan fetch-haun tietue.JSONiin
+        <!-- Tässä tein ohjeen mukaan fetch-haun tietue.JSONiin -->
         fetch('tietue.JSON')
             .then(function (response) {
                 return response.json();
@@ -55,20 +55,16 @@
                 document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
 
-        //Kerro-funktio, joka tulostaa datan
+        <!-- Kerro-funktio, joka tulostaa datan -->
         function kerro(obj) {
             var tiedot = "<p>";
 
             for (var i = 0; i < obj.tekniikat.length; i++) {
-                tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
-                tiedot += " <a href='" + obj.tekniikat[i].linkki + "'>" + obj.tekniikat[i].linkki + "</a><br>";
-            }
-
-            tiedot += "</p>";
-
+                tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>"; tiedot
+                    += " <a href='" + obj.tekniikat[i].linkki + "'>" + obj.tekniikat[i].linkki + "</a><br>";
+            } tiedot += "</p>";
             document.getElementById("vastaus").innerHTML = tiedot;
-        }
-    </script>
+        } </script>
 </body>
 
 </html>
