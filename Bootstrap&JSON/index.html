@@ -53,22 +53,22 @@
                 <p>Lorem ipsum dolor sit ame.</p>
 
                 <!-- Kuvan haku jsonilla -->
-<script>
-  
-  fetch('json/auto.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Verkkovirhe: JSON-tiedostoa ei löytynyt');
-      }
-      return response.json();
-    })
-    .then(data => {
-      document.getElementById('auto-kuva').src = data.kuvaUrl;
-    })
-    .catch(error => {
-      console.error('Virhe ladattaessa JSON-dataa:', error);
-    });
-</script>
+                <script>
+
+                    fetch('./json/haku.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Verkkovirhe: JSON-tiedostoa ei löytynyt');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            document.getElementById('auto-kuva').src = data.kuvaUrl;
+                        })
+                        .catch(error => {
+                            console.error('Virhe ladattaessa JSON-dataa:', error);
+                        });
+                </script>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Active</a>
