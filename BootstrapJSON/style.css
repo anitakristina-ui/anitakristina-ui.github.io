@@ -1,0 +1,37 @@
+/* Sivun taustaväri ja tekstiväri */
+body {
+    background-color: #f3abcb;
+    color: #212529;
+}
+
+/* Yläpalkki */
+.bg-primary {
+    background-color: #7d245f !important;
+}
+
+/* Navigointipalkki */
+.bg-dark {
+    background-color: #6f0441 !important;
+}
+
+/* Valikkolinkkien värit aktiivisena */
+.nav-pills .nav-link.active {
+    background-color: #eef0f6 !important;
+    /* Aktiivisen napin väri */
+}
+
+/* Tekstien pääotsikot */
+h1,
+h2,
+h3 {
+    color: #020304;
+}
+
+/* Valelaatikot (Fake Image) */
+.fakeimg {
+    height: 200px;
+    background: #cbd5e1;
+    /* Pehmeämpi harmaa */
+    border-radius: 8px;
+    /* Pyöristetyt kulmat */
+}
