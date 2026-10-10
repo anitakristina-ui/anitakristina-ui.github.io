@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- Otsikkoalue -->
+    <!-- Otsikko -->
     <div class="p-5 bg-primary text-white text-center">
         <h1>Tervetuloa Anitan autokauppaan</h1>
         <p>Osta tai vaihda autosi parhaaseen hintaan!</p>
@@ -41,20 +41,20 @@
 
         <!-- Yhteydenottolomake -->
         <form>
-            <!-- Nimi -->
+    
             <div class="mb-3">
                 <label for="nimiInput" class="form-label">Nimi</label>
                 <input type="text" class="form-control" id="nimiInput" placeholder="Matti Meikäläinen" required>
             </div>
 
-            <!-- Sähköposti -->
+            
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Sähköpostiosoite</label>
                 <input type="email" class="form-control" id="emailInput" placeholder="nimi@esimerkki.fi" required>
                 <div id="emailHelp" class="form-text">Määritämme sähköpostiasi vain viestintään.</div>
             </div>
 
-            <!-- Aihe / Alasvetovalikko -->
+        
             <div class="mb-3">
                 <label for="aiheSelect" class="form-label">Yhteydenoton aihe</label>
                 <select class="form-select" id="aiheSelect">
@@ -65,20 +65,20 @@
                 </select>
             </div>
 
-            <!-- Viesti -->
+            
             <div class="mb-3">
                 <label for="viestiTextarea" class="form-label">Viesti</label>
                 <textarea class="form-control" id="viestiTextarea" rows="4"
                     placeholder="Kirjoita viestisi tähän..."></textarea>
             </div>
 
-            <!-- Valintaruutu -->
+            
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="ehdotCheck" required>
                 <label class="form-check-label" for="ehdotCheck">Hyväksyn tietosuojaehdot</label>
             </div>
 
-            <!-- Lähetyspainike -->
+        
             <button type="submit" class="btn btn-primary">Lähetä viesti</button>
         </form>
 
@@ -89,7 +89,6 @@
         <p>© Anitan autokauppa</p>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
