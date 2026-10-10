@@ -26,11 +26,3 @@ h3 {
     color: #020304;
 }
 
-/* Valelaatikot (Fake Image) */
-.fakeimg {
-    height: 200px;
-    background: #cbd5e1;
-    /* Pehmeämpi harmaa */
-    border-radius: 8px;
-    /* Pyöristetyt kulmat */
-}
